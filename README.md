@@ -1,63 +1,37 @@
-# FLIR METERLiNK - AI Agent Skills Repository
+# FLIR METERLiNK - QA & Automation Workspace
 
-Welcome to the **FLIR METERLiNK** AI Agent Skills Repository. This repository aggregates structured, production-ready AI skills and playbooks designed to empower agentic workflows (such as Gemini, Codex, or other LLM-based coding assistants) to operate autonomously, safely, and efficiently.
+這是一個專為 FLIR METERLiNK (特別是 SV95 型號) 打造的測試與開發資源庫。
+旨在透過自動化腳本、標準化測試案例與 AI 技術知識，提升團隊的測試效率與對齊業務邏輯。
 
----
+## 📂 專案結構指南
 
-## 📂 Repository Structure
+### 1. 自動化測試 (Automation Scripts)
+*   **目錄**: `/scripts/flir_android/`
+*   **用途**: 基於 ADB 與 UI Automator 的 Android Smoke Test 框架。
+*   **特點**: 
+    *   包含穩定的 Mock 測試腳本 (例如自動連點進入 Debug 模式、防動畫干擾的重啟機制)。
+    *   **執行方式**: `python3 scripts/flir_android_smoke.py --case mock-suite`
 
-This repository focuses exclusively on modular AI skill blueprints:
+### 2. 測試案例庫 (Test Cases)
+*   **檔案**: `SV95_QA_Style_Full_TCs_Final_Clean.csv`
+*   **用途**: 涵蓋 60+ 條 SV95 的功能測試案例，包含連線、UI 防呆 (Danger > Alert)、密碼限制 (6-8碼) 等。
+*   **如何使用**: 可以直接複製並貼上到 Google Sheets 或 TestRail 中進行管理。
 
-```text
-├── README.md                           # Main repository documentation
-└── skills/
-    ├── flir-meterlink-expert/          # FLIR METERLiNK SV95 spec skill (AI agent ready)
-    ├── vibration-iso-expert/           # Machine vibration ISO 10816 rule engine skill
-    ├── jira-ops/                       # Jira ticket read/write skill
-    ├── testmo-sync/                    # Pytest-to-Testmo syncing skill
-    └── atlassian-confluence-fetch/     # Confluence API documentation fetching skill
-```
+### 3. 技術知識庫 (Documentation)
+*   **檔案**: `Meterlink.md`
+    *   專案唯一的 Source of Truth，包含 Jira Ticket (FM-13xx 系列) 與核心功能的對應。
+*   **檔案**: `SV95_CONCEPTS.md`
+    *   **推薦新進同事閱讀**！用最直白的比喻（心跳頻率 vs 摸脈搏時間）解釋了 BLE / Wi-Fi / MQTT 的分工，以及各項參數的 UI 限制。
 
----
-
-## 🧠 AI Agent Skills Overview
-
-Each skill directory under `skills/` contains a specialized `SKILL.md` file equipped with a YAML frontmatter definition. These serve as direct execution playbooks:
-
-### 1. 📱 [FLIR METERLiNK Expert](skills/flir-meterlink-expert/SKILL.md)
-*   **Purpose**: Encapsulates product specifications for the SV95 BLE device integration.
-*   **Key Features**:
-    *   **BLE Connect Sequence**: Clock synchronization (RTC) and auto-initialization rules.
-    *   **Unit Conversion Rules**: Metric (`mm/s`, `°C`) to imperial (`inch/s`, `°F`) translation behaviors, including temperature alarm reset rules.
-    *   **Alarm Notification Format**: String templates for system-level alarm warnings.
-    *   **Android Smoke Cases**: Checklists for `SMK-01` through `SMK-15` without requiring physical Bluetooth hardware.
-
-### 2. 🛡️ [Vibration ISO Expert](skills/vibration-iso-expert/SKILL.md)
-*   **Purpose**: Evaluates machine vibration severity based on the ISO 10816 standard.
-*   **Key Features**:
-    *   Vibration threshold classifications (Rigid vs. Flexible foundations).
-    *   Machine size categories (Large, Medium, Small).
-    *   Includes a Python lookup automation script:
-        ```bash
-        python3 skills/vibration-iso-expert/scripts/iso_10816_lookup.py large rigid 5.2 mm/s
-        ```
-
-### 3. 🧪 [Testmo Sync Playbook](skills/testmo-sync/SKILL.md)
-*   **Purpose**: Maps AST (Abstract Syntax Trees) from Python automation test cases to human-readable step definitions and pushes them to Testmo API.
-*   **Key Features**:
-    *   Automated token and configuration parsing.
-    *   Action/Assertion matching rules.
-    *   Payload generation schema and workflow.
-
-### 4. 🎫 [Jira Operations](skills/jira-ops/SKILL.md)
-*   **Purpose**: Automates Jira issue CRUD operations while adhering to safety-first boundaries.
-*   **Key Features**:
-    *   Idempotent reads and transitions.
-    *   Preservation of description templates.
-    *   discoverable workflow field matching.
-
-### 5. 📖 [Confluence Fetcher](skills/atlassian-confluence-fetch/SKILL.md)
-*   **Purpose**: Fetches REST storage representations from Confluence and syncs them to clean Markdown files in local workspaces.
+### 4. Gemini CLI 專家技能 (AI Skills)
+*   **目錄**: `/skills/`
+*   **用途**: 這是 AI 專家的「知識腦核」。我們將專案特有的業務規則、通訊規範與 ISO 標準封裝成可重複使用的技能。
+*   **組成**:
+    *   `mqtt-protocol-skill/`: 包含 MQTT 驗證邏輯與密碼規範。
+    *   `vibration-iso-expert/`: 提供 ISO 10816 振動等級查詢功能。
+*   **如何使用與開發**:
+    *   **安裝**: 執行 `gemini skills install mqtt-protocol-skill.skill --scope workspace`。
+    *   **更新**: 如果規範有變，直接修改 `skills/` 內的 MD 檔並重新打包，即可讓全團隊的 AI 助手同步更新知識。
 
 ---
-*Developed with Advanced Agentic Coding by Antigravity.*
+*Maintained by QA/Dev Team*
