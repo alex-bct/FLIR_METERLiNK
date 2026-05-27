@@ -1,0 +1,104 @@
+"Component","Test title","Pre-condition","Test steps","Expected Result"
+"OOBE / Permissions","First-time Permission - Nearby Devices","App is newly installed. SV95 nearby.","1. Launch the App for the first time.
+2. Observe the 'Nearby Devices' permission request.
+3. Select 'Allow'.","App correctly asks for permission and starts scanning after user allows."
+"OOBE / Permissions","Denying Permissions handling","App is newly installed.","1. Launch the App.
+2. Deny 'Nearby Devices' and 'Location' permissions.
+3. Navigate to the scan screen.","App shows a clear message and a button to redirect user to system settings."
+"Home - Connection","SV95 BLE Discovery (DFU logic)","SV95 is in advertising mode.","1. Go to 'Add Device' screen.
+2. Wait for scanning to complete.","SV95 is discovered and listed. DFU check no longer blocks discovery."
+"Home - Connection","Automatic RTC Sync on connect","SV95 just established connection.","1. Connect the SV95 device.
+2. Inspect the device timestamp or system logs.","App automatically sends 'Set RTC' command to sync clock."
+"Home - Connection","Auto-Init Schedule Settings","New SV95 with empty schedule.","1. Connect SV95.
+2. App receives null/default schedule info (1970).","App automatically calls 'Set Schedule' (2s Sampling / 2m Interval / 3y Duration)."
+"Home - Connection","Reconnect to previously added SV95","SV95 was previously paired.","1. Turn off SV95 and wait for 'Disconnected'.
+2. Turn SV95 back on.","App re-establishes connection automatically within 10 seconds."
+"Home - Connection","Multiple SV95 Devices Discovery","Multiple SV95s are nearby.","1. Navigate to 'Available devices' screen.
+2. Observe the device list.","Each SV95 is listed separately with its unique Serial Number and Product Image."
+"Home - Device Card","OA Value Display (X/Y/Z)","SV95 is connected and streaming.","1. Look at the SV95 card on Home screen.
+2. Compare values with the physical sensor if possible.","Card displays Overall Acceleration for X, Y, and Z axes correctly."
+"Home - Device Card","Temperature Value Display","SV95 is connected.","1. Look at the SV95 card.
+2. Locate the temperature reading.","Temperature value is displayed clearly next to the vibration data."
+"Home - Device Card","Card Value Color Alert (Yellow/Alert)","Vibration Alert threshold is exceeded.","1. Observe the text color of the OA value on the card.","Value turns YELLOW to indicate an Alert state."
+"Home - Device Card","Card Value Color Alert (Red/Danger)","Vibration Danger threshold is exceeded.","1. Observe the text color of the OA value on the card.","Value turns RED to indicate a Danger state."
+"Home - Device Card","Card Layout in List View","Multiple devices added (SV95 and others).","1. Observe the Home screen device list.","SV95 card layout is consistent with other METERLiNK devices but shows specific OA/Temp fields."
+"Device Detail","Trend Card Visualization","Vibration data logs exist.","1. Enter SV95 Device Detail screen.
+2. Verify the 'Report' button is removed.
+3. Observe the Trend Card.","Report button is gone; Trend Card shows historical vibration/temp plots correctly."
+"Device Detail","Double Y-Axis Chart","Live/Trend data streaming.","1. View the chart in Device Detail.","Chart supports two Y-axes to show Vibration (mm/s) and Temperature (C) at once."
+"Device Detail","Full-screen Chart Toggle","Detail page is open.","1. Tap the 'Full-screen' icon on the Trend/Live card.","Chart expands to fill the entire screen and supports landscape orientation."
+"Device Detail","Chart Interaction - Marker Drag","Detail page is open.","1. Tap on any data point on the chart.
+2. Drag the marker along the timeline.","A vertical marker follows the finger and displays exact value/timestamp."
+"Device Detail","Trend Data Filtering (Time/Date)","Historical data exists.","1. Open the filter menu in Trend Card.
+2. Select a specific date range.","Trend chart updates to show only the selected data segment."
+"Device Detail","Trend Data Filtering (Value Range)","Historical data exists.","1. Open the filter menu.
+2. Set a minimum vibration value threshold.","Trend chart filters out all data points below the threshold."
+"Device Detail - Alarm","ISO 10816 Group Selection (Large)","SV95 connected.","1. Navigate to Alarm Settings.
+2. Select 'Group 1: Large Machines'.","Thresholds are updated to match ISO 10816 standards for large machines."
+"Device Detail - Alarm","ISO 10816 Group Selection (Medium)","SV95 connected.","1. Navigate to Alarm Settings.
+2. Select 'Group 2: Medium Machines'.","Thresholds are updated correctly for medium-sized machines."
+"Device Detail - Alarm","Manual Alert/Danger Thresholding","SV95 connected.","1. Manually enter custom Alert and Danger values.
+2. Tap 'Save'.","Custom limits are saved and correctly used for color-coding and notifications."
+"Device Detail - Alarm","Threshold Scaling on Unit Switch","OA unit is mm/s.","1. Change OA unit to inch/s in More page.
+2. Return to Alarm Settings.","The ISO and manual thresholds are correctly converted to the new unit."
+"Device Detail - More","Info Refresh on Page Enter","In Detail page.","1. Tap the 'More' (Settings) icon.
+2. Monitor BLE communication.","App sends 'Get Wi-Fi', 'Get MQTT', and 'Get Schedule' commands immediately."
+"Device Detail - More","Unit Switching: OA (mm/s to inch/s)","In More page.","1. Switch OA unit to 'inch/s'.
+2. Check Home Card and Charts.","All vibration values across the app are converted correctly."
+"Device Detail - More","Unit Switching: Temp (C to F)","In More page.","1. Switch Temp unit to 'F'.
+2. Check Home Card and Charts.","Temperature readings convert correctly."
+"Device Detail - More","Unit Switching: Temp Alarm Clear Logic","Existing Temp Alarms are set.","1. Change Temperature unit (e.g. C to F).
+2. Go back to Alarm Settings.","All previous Temperature Alarm thresholds are CLEARED as per App logic."
+"Device Detail - More","Wi-Fi Settings Sub-page","In More page.","1. Tap on 'Wi-Fi Settings'.","Sub-page opens and displays the current Wi-Fi SSID and status."
+"Device Detail - More","MQTT Settings Sub-page","In More page.","1. Tap on 'MQTT Settings'.","Sub-page opens and displays Broker, Port, and Topic info."
+"Device Detail - More","Schedule Settings Sub-page","In More page.","1. Tap on 'Schedule Settings'.","Sub-page opens and displays Sampling, Interval, and Schedule status."
+"Device Detail - More","Apply Wi-Fi Settings from Existing","Two SV95 devices are connected.","1. On a new SV95, tap 'Apply Wi-Fi settings from existing device'.
+2. Select the other SV95.","Wi-Fi credentials are successfully copied to the new device."
+"Device Detail - More","Apply MQTT Settings from Existing","Two SV95 devices are connected.","1. On a new SV95, tap 'Apply MQTT settings from existing device'.
+2. Select the other SV95.","MQTT settings (Broker, Port, etc.) are successfully copied."
+"Files & Recordings","Recording List Access","SV95 is connected.","1. Tap the 'FILES' tab.
+2. Verify 'Gallery' button is not visible.
+3. Tap 'Recording List'.","Gallery button is hidden for SV95. Recording List is accessible."
+"Files & Recordings","Download Log from Device","Log exists in SV95 memory.","1. Navigate to Recording List.
+2. Select a file and tap 'Download'.","File is downloaded successfully and becomes viewable in the local file list."
+"Files & Recordings","Delete Log (Device vs App Sync)","Log exists on device.","1. Delete a log from the App list.
+2. Choose to 'Erase from Device'.","Log is removed from the App list and the hardware memory."
+"System / UI","Dark Mode Theme Compatibility","System Dark Mode is ON.","1. Navigate through all SV95 screens (Home, Detail, More).","UI elements, charts, and text remain legible with correct dark theme colors."
+"System / UI","Tablet Layout Compatibility","Running on Tablet device.","1. Launch App on Tablet.
+2. Navigate through SV95 pages.","Layout is functional and orientation changes are handled correctly."
+"System / UI","Target SDK 36 Verification","App build.","1. Verify targetSdkVersion in build configuration.","App correctly targets Google API Level 36."
+"System / UI","Security compliance & Sign Key","App build.","1. Verify CVE fixes and signing key.","App passes security requirements and uses the correct signing key (/1338)."
+"System / UI","Push Notification for Alarm","App is in background.","1. Trigger a vibration alarm.
+2. Observe the push notification.","Notification format: ""%Device% measurement %val% is higher than [alert|danger] value %limit%""."
+"System / UI","App Launch Performance","Android 15 device.","1. Cold start the App.","App launch time is within the performance threshold for high-end SDK versions."
+"Device Detail - More","Schedule Setting Persistence","In Schedule page.","1. Change Sampling to 1s and Interval to 1min.
+2. Disconnect and reconnect.","The modified schedule settings are correctly saved on the SV95 hardware."
+"Home - Connection","Connection Sequence Failure","Simulate BLE disconnect during init.","1. Connect SV95.
+2. Interrupt connection during 'Get Info' phase.","App handles the interruption gracefully and allows user to retry the connection."
+"Home - Device Card","Disconnected State UI","SV95 is disconnected.","1. Look at the SV95 card on Home screen.","Card shows 'Disconnected' status and grays out the last known values."
+"Device Detail","Empty Trend Card State","New SV95 with no logs.","1. Enter Device Detail.
+2. Observe the Trend Card.","Trend Card shows an 'Empty' or 'No Data' placeholder image/text."
+"More Page","Entering Wi-Fi sub-page refresh","In More page.","1. Tap 'Wi-Fi Settings'.","App sends 'Get Wi-Fi info' command immediately to ensure latest data."
+"More Page","Entering MQTT sub-page refresh","In More page.","1. Tap 'MQTT Settings'.","App sends 'Get MQTT info' command immediately."
+"More Page","Entering Schedule sub-page refresh","In More page.","1. Tap 'Schedule Settings'.","App sends 'Get Schedule info' command immediately."
+"Files & Recordings","Batch Download (Partial Success)","Multiple files selected.","1. Select 5 files for download.
+2. Simulate one file failing.","App reports success for 4 files and shows a clear 'Failed' status for the specific 5th file."
+"Home - Connection","Multiple Phone connection contention","SV95 connected to Phone A.","1. Try to connect to the same SV95 from Phone B.","App on Phone B correctly identifies the device is busy or currently unavailable."
+"Alert Settings","ISO 10816 Threshold for Small Machines","SV95 connected.","1. Navigate to Alarm Settings.
+2. Select 'Group 3: Small Machines'.","Thresholds are updated correctly for small machine categories."
+"More Page","OA Unit Switch - Home Card refresh","In More page.","1. Switch OA unit.
+2. Immediately return to Home screen.","Home card values and units reflect the change instantly."
+"More Page","Temp Unit Switch - Home Card refresh","In More page.","1. Switch Temp unit.
+2. Immediately return to Home screen.","Home card temperature value and unit reflect the change instantly."
+"Device Detail","Chart full-screen rotation handling","Chart in full-screen mode.","1. Rotate the phone between Portrait and Landscape.","Chart re-scales correctly without resetting the marker or zoom level."
+"Connection","Post-Connection GET INFO sequence","Monitoring BLE traffic.","1. Connect SV95.","Verify the order of commands: Set RTC -> Get Wi-Fi -> Get MQTT -> Get Schedule."
+"Files & Recordings","Recording List Search/Filter","Large list of logs.","1. Use the search bar in Recording List.
+2. Filter by date.","App correctly filters the list of device recordings."
+"Device Detail - More","Schedule Interval Boundary Check","In Schedule Settings page.","1. Try to input 1 min as Interval. 2. Try to input 1440 mins. 3. Try to input 1441 mins.","App blocks 1 min and 1441 mins; 1440 mins is accepted successfully."
+"Device Detail - More","Recording Time Unit and Logic Check","In Schedule Settings page.","1. Verify the unit of Recording Time. 2. Try to set Recording Time > Interval.","Unit is strictly in Seconds. App prevents saving if Recording Time exceeds the Interval value."
+"Device Detail - Alarm","Alarm Value Validation Logic","In Alarm Settings page.","1. Set Alert value to 5.0. 2. Attempt to set Danger value to 4.0. 3. Save.","App blocks the save operation and shows an error message indicating that Danger value must be greater than Alert value."
+"Device Detail - More","Device Passcode Configuration","In Device Settings / Passcode page.","1. Enter a 5-character passcode. 2. Enter a 9-character passcode. 3. Enter a 7-character alphanumeric passcode.","App blocks 5 and 9 character inputs. Passcode must be 6-8 alphanumeric characters long."
+"Device Detail - More","MQTT Port Range Validation","In MQTT Settings page.","1. Enter 0 as Port. 2. Enter 65536 as Port. 3. Enter 1883 as Port.","App blocks 0 and 65536. Valid range is 1-65535."
+"Device Detail - More","MQTT Test Connection Cooldown","In MQTT Settings page.","1. Tap the ""Test"" connection button. 2. Immediately try to tap it again.","The Test button becomes disabled or unresponsive for a specified cooldown period after the first tap to prevent spamming."
+"Device Detail","Advanced Chart Interaction - Show Marker Toggle","In Full-screen Chart view.","1. Locate and toggle the ""Show Marker"" switch.","The marker visibility toggles on/off correctly; chart remains interactive."
+"Device Detail","Chart Tooltip for Visible Lines","In Full-screen Chart view.","1. Tap on a specific line (X, Y, Z, or Temp) on the chart.","App displays a tooltip showing the specific value and unit for the selected data line."

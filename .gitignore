@@ -1,0 +1,20 @@
+# Environment files
+.env
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary office lock files
+~$*
+
+# Test run outputs, screenshots and API query caches
+artifacts/
+
+# Local test configurations
+scripts/flir_android/mock_profile.json

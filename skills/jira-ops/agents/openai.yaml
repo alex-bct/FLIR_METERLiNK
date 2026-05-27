@@ -1,0 +1,4 @@
+interface:
+  display_name: "Jira Ops"
+  short_description: "Read, create, and update Jira issues safely"
+  default_prompt: "Use $jira-ops to read, create, or update Jira issues for this project."
