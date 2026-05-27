@@ -1,26 +1,15 @@
-# FLIR METERLiNK Automation & Project Repository
+# FLIR METERLiNK - AI Agent Skills Repository
 
-Welcome to the **FLIR METERLiNK (SV95)** project repository. This codebase aggregates product specifications, vibration severity standards (ISO 10816), and Android UI smoke test automation scripts.
-
-Additionally, this repository provides structured **AI agent skills** inside the `skills/` directory to help AI developers and agentic workflows operate seamlessly on tasks related to Jira syncing, Testmo publishing, Confluence integration, and FLIR METERLiNK specifications.
+Welcome to the **FLIR METERLiNK** AI Agent Skills Repository. This repository aggregates structured, production-ready AI skills and playbooks designed to empower agentic workflows (such as Gemini, Codex, or other LLM-based coding assistants) to operate autonomously, safely, and efficiently.
 
 ---
 
-## 📂 Project Structure
+## 📂 Repository Structure
+
+This repository focuses exclusively on modular AI skill blueprints:
 
 ```text
-├── README.md                           # Main project documentation
-├── Meterlink.md                        # SV95 Full Spec & Project Panorama
-├── android_smoke_cases_no_device.md    # Android smoke testing cases checklist
-├── DM285_CM275 Range Data.xlsx         # Range data specifications
-├── FLIR_QA_TCs_METERLiNK.xlsx          # QA full test cases
-├── Meterlink_Protocol_Definition.pdf   # Official BLE protocol spec (v4.2.14)
-├── Meterlink_Visual.svg                # Protocol state diagrams
-├── scripts/
-│   ├── flir_android_smoke.py           # CLI entry point for Android smoke tests
-│   ├── flir_android/                   # UI test automation package
-│   ├── push_to_testmo.py               # Push test scripts to Testmo API
-│   └── qa_daily_report.py              # QA reporting helper script
+├── README.md                           # Main repository documentation
 └── skills/
     ├── flir-meterlink-expert/          # FLIR METERLiNK SV95 spec skill (AI agent ready)
     ├── vibration-iso-expert/           # Machine vibration ISO 10816 rule engine skill
@@ -31,43 +20,44 @@ Additionally, this repository provides structured **AI agent skills** inside the
 
 ---
 
-## 🧠 AI Agent Skills Ready
+## 🧠 AI Agent Skills Overview
 
-This project is fully equipped with AI-agent skills located under `/skills`. These are specialized Markdown blueprints with structured playbooks that empower agentic tools (like Gemini/Codex) to automate complex tasks.
+Each skill directory under `skills/` contains a specialized `SKILL.md` file equipped with a YAML frontmatter definition. These serve as direct execution playbooks:
 
-1.  **[FLIR METERLiNK Expert](skills/flir-meterlink-expert/SKILL.md)**: BLE connection sequences, RTC clock-syncs, unit-switching logic, alarm popup formats, and the smoke suite checklist.
-2.  **[Vibration ISO Expert](skills/vibration-iso-expert/SKILL.md)**: Validates vibration levels on SV95. Comes with a lookup engine:
-    ```bash
-    python3 skills/vibration-iso-expert/scripts/iso_10816_lookup.py large rigid 5.2 mm/s
-    ```
-3.  **[Testmo Sync Playbook](skills/testmo-sync/SKILL.md)**: Automatically parses Python pytest cases using AST and registers them via REST API.
-4.  **[Jira Operations](skills/jira-ops/SKILL.md)**: Connects to Jira Cloud, transitions workflows, updates descriptions, and adds comments safely.
-5.  **[Confluence Fetcher](skills/atlassian-confluence-fetch/SKILL.md)**: Imports specifications and pages directly into local workspace markdown format.
+### 1. 📱 [FLIR METERLiNK Expert](skills/flir-meterlink-expert/SKILL.md)
+*   **Purpose**: Encapsulates product specifications for the SV95 BLE device integration.
+*   **Key Features**:
+    *   **BLE Connect Sequence**: Clock synchronization (RTC) and auto-initialization rules.
+    *   **Unit Conversion Rules**: Metric (`mm/s`, `°C`) to imperial (`inch/s`, `°F`) translation behaviors, including temperature alarm reset rules.
+    *   **Alarm Notification Format**: String templates for system-level alarm warnings.
+    *   **Android Smoke Cases**: Checklists for `SMK-01` through `SMK-15` without requiring physical Bluetooth hardware.
 
----
+### 2. 🛡️ [Vibration ISO Expert](skills/vibration-iso-expert/SKILL.md)
+*   **Purpose**: Evaluates machine vibration severity based on the ISO 10816 standard.
+*   **Key Features**:
+    *   Vibration threshold classifications (Rigid vs. Flexible foundations).
+    *   Machine size categories (Large, Medium, Small).
+    *   Includes a Python lookup automation script:
+        ```bash
+        python3 skills/vibration-iso-expert/scripts/iso_10816_lookup.py large rigid 5.2 mm/s
+        ```
 
-## 📱 Android Smoke Testing
+### 3. 🧪 [Testmo Sync Playbook](skills/testmo-sync/SKILL.md)
+*   **Purpose**: Maps AST (Abstract Syntax Trees) from Python automation test cases to human-readable step definitions and pushes them to Testmo API.
+*   **Key Features**:
+    *   Automated token and configuration parsing.
+    *   Action/Assertion matching rules.
+    *   Payload generation schema and workflow.
 
-We have built a non-device smoke testing suite for quick OOBE and settings page validations using standard `adb` interactions.
+### 4. 🎫 [Jira Operations](skills/jira-ops/SKILL.md)
+*   **Purpose**: Automates Jira issue CRUD operations while adhering to safety-first boundaries.
+*   **Key Features**:
+    *   Idempotent reads and transitions.
+    *   Preservation of description templates.
+    *   discoverable workflow field matching.
 
-### Prerequisites
-1.  Connect your Android phone with USB debugging enabled.
-2.  Install the FLIR METERLiNK beta package (`com.flir.METERLiNKAPP.beta`).
-3.  Make sure `adb` is available in your shell `PATH`.
-
-### Running Tests
-Run the entire mock suite:
-```bash
-cp scripts/flir_android/mock_profile.example.json scripts/flir_android/mock_profile.json
-python3 scripts/flir_android_smoke.py --case mock-suite --mock-profile scripts/flir_android/mock_profile.json
-```
-
-Run specific case:
-```bash
-python3 scripts/flir_android_smoke.py --case cant-connect
-```
-
-All test outcomes, screenshots, and XML window hierarchies are stored inside `artifacts/android_smoke/`.
+### 5. 📖 [Confluence Fetcher](skills/atlassian-confluence-fetch/SKILL.md)
+*   **Purpose**: Fetches REST storage representations from Confluence and syncs them to clean Markdown files in local workspaces.
 
 ---
 *Developed with Advanced Agentic Coding by Antigravity.*

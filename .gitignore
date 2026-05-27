@@ -1,20 +1,17 @@
-# Environment files
-.env
+# Ignore everything in the project root by default
+*
 
-# OS metadata
-.DS_Store
-Thumbs.db
+# Do not ignore .gitignore and README.md
+!.gitignore
+!README.md
 
-# Python caches
-__pycache__/
-*.py[cod]
-*$py.class
+# Do not ignore skills directory and its contents recursively
+!skills/
+!skills/**
 
-# Temporary office lock files
-~$*
-
-# Test run outputs, screenshots and API query caches
-artifacts/
-
-# Local test configurations
-scripts/flir_android/mock_profile.json
+# Ignore system metadata inside allowed directories
+**/.DS_Store
+**/Thumbs.db
+**/__pycache__/
+**/*.py[cod]
+**/~$*
