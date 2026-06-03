@@ -67,5 +67,27 @@
     *   **如何取得最新更新 (一般使用者)**: 若有其他人更新了技能，您只需執行 `git pull` 拉取最新程式碼，並再次執行上述 `install` 指令覆蓋即可。
     *   **如何修改技能 (開發者)**: 若有業務邏輯或規範變更，請直接修改該 skill 目錄內的設定檔（如 MD/指令檔），再透過 git push 分享給團隊。
 
+### 5. 協作與貢獻指南 (Contribution Guidelines)
+為確保 `main` 分支的穩定性，當有其他團隊成員（如 Kenny）需要進行腳本修改、新增測試案例或更新文件時，請遵循以下開發流程：
+
+1. **建立新分支 (Create a Branch)**：
+   不要直接在 `main` 分支上開發。請根據你要做的事情建立一個新分支（例如 `feature/xxx`、`fix/xxx` 或 `docs/xxx`）：
+   ```bash
+   git checkout main
+   git pull origin main
+   git checkout -b feature/update-test-cases
+   ```
+2. **提交修改 (Commit Changes)**：
+   開發完成後進行 Commit，請寫清楚這次修改的內容：
+   ```bash
+   git add .
+   git commit -m "feat: add new test cases for SV95"
+   ```
+3. **發布與合併 (Push & PR)**：
+   將分支推送到 GitHub，並在 GitHub 上發起 **Pull Request (PR)**。經由 Code Review 確認沒問題後，再合併 (Merge) 回 `main` 分支。
+   ```bash
+   git push origin feature/update-test-cases
+   ```
+
 ---
 *Maintained by QA/Dev Team*
