@@ -5,6 +5,8 @@
 !.gitignore
 !README.md
 !SV95_QA_Style_Full_TCs.md
+!.github/
+!.github/**
 
 # Do not ignore skills directory and its contents recursively
 !skills/
