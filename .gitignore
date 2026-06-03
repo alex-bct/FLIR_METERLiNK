@@ -1,9 +1,10 @@
 # Ignore everything in the project root by default
 *
 
-# Do not ignore .gitignore and README.md
+# Do not ignore .gitignore and README.md and TCs
 !.gitignore
 !README.md
+!SV95_QA_Style_Full_TCs.md
 
 # Do not ignore skills directory and its contents recursively
 !skills/
