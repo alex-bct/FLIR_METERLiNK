@@ -40,9 +40,10 @@
     *   **執行方式**: `python3 scripts/flir_android_smoke.py --case mock-suite`
 
 ### 2. 測試案例庫 (Test Cases)
-*   **檔案**: `SV95_QA_Style_Full_TCs_Final_Clean.csv`
+*   **檔案**: `SV95_QA_Style_Full_TCs.md`
 *   **用途**: 涵蓋 60+ 條 SV95 的功能測試案例，包含連線、UI 防呆 (Danger > Alert)、密碼限制 (6-8碼) 等。
-*   **如何使用**: 可以直接複製並貼上到 Google Sheets 或 TestRail 中進行管理。
+*   **優勢**: 使用 Markdown 表格格式，在 GitHub 上具備完美的預覽效果，且非常適合 Git 版控（Diff 追蹤）。
+*   **如何使用**: 可以直接在 GitHub 上預覽，或是複製貼上到 TestRail / Google Sheets 中進行管理。
 
 ### 3. 技術知識庫 (Documentation)
 *   **檔案**: `Meterlink.md`
