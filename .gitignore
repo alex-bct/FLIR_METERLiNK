@@ -7,6 +7,16 @@
 !SV95_QA_Style_Full_TCs.md
 !.github/
 !.github/**
+!scripts/
+!scripts/**
+!fetch_all_tickets.py
+!*.md
+!*.pdf
+!*.docx
+!*.xlsx
+!*.svg
+!*.png
+!*.skill
 
 # Do not ignore skills directory and its contents recursively
 !skills/

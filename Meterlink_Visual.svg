@@ -1,0 +1,70 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="800" height="500" rx="15" fill="#1A1A1A"/>
+  
+  <!-- 標題 -->
+  <text x="40" y="45" fill="#F57C00" font-family="Arial, sans-serif" font-size="24" font-weight="bold">FLIR METERLiNK Project Roadmap &amp; Ecosystem</text>
+  <text x="40" y="70" fill="#888" font-family="Arial, sans-serif" font-size="14">Evolution from Core Multimeters to SV95 Vibration Sensor</text>
+
+  <!-- 時間軸線 -->
+  <path d="M60 200 H740" stroke="#444" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- 演進節點 -->
+  <!-- 基礎期 -->
+  <circle cx="100" cy="200" r="8" fill="#F57C00"/>
+  <text x="70" y="235" fill="#EEE" font-family="Arial, sans-serif" font-size="12" font-weight="bold">FM-1 ~ FM-200</text>
+  <text x="70" y="255" fill="#AAA" font-family="Arial, sans-serif" font-size="11">Core &amp; CM57</text>
+  <rect x="70" y="140" width="60" height="30" rx="5" fill="#333" stroke="#F57C00" stroke-width="1"/>
+  <text x="80" y="160" fill="#F57C00" font-family="Arial, sans-serif" font-size="12" font-weight="bold">START</text>
+
+  <!-- 擴張期 -->
+  <circle cx="260" cy="200" r="8" fill="#F57C00"/>
+  <text x="230" y="235" fill="#EEE" font-family="Arial, sans-serif" font-size="12" font-weight="bold">FM-210 ~ 600</text>
+  <text x="230" y="255" fill="#AAA" font-family="Arial, sans-serif" font-size="11">DM285/286</text>
+  <text x="230" y="270" fill="#666" font-family="Arial, sans-serif" font-size="10">Marker Logic</text>
+
+  <!-- 雲端期 -->
+  <circle cx="420" cy="200" r="8" fill="#F57C00"/>
+  <text x="390" y="235" fill="#EEE" font-family="Arial, sans-serif" font-size="12" font-weight="bold">FM-650 ~ 950</text>
+  <text x="390" y="255" fill="#AAA" font-family="Arial, sans-serif" font-size="11">Ignite Cloud</text>
+  <text x="390" y="270" fill="#666" font-family="Arial, sans-serif" font-size="10">MSAL &amp; Upload</text>
+
+  <!-- 影像期 -->
+  <circle cx="580" cy="200" r="8" fill="#F57C00"/>
+  <text x="550" y="235" fill="#EEE" font-family="Arial, sans-serif" font-size="12" font-weight="bold">FM-997 ~ 1200</text>
+  <text x="550" y="255" fill="#AAA" font-family="Arial, sans-serif" font-size="11">VS80 Video</text>
+  <text x="550" y="270" fill="#666" font-family="Arial, sans-serif" font-size="10">RTSP &amp; FTP</text>
+
+  <!-- 振動期 -->
+  <circle cx="720" cy="200" r="12" fill="#F57C00"/>
+  <text x="690" y="235" fill="#F57C00" font-family="Arial, sans-serif" font-size="12" font-weight="bold">FM-1288+</text>
+  <text x="690" y="255" fill="#EEE" font-family="Arial, sans-serif" font-size="11" font-weight="bold">SV95 Sensor</text>
+  <rect x="680" y="130" width="80" height="40" rx="5" fill="#F57C00" fill-opacity="0.2" stroke="#F57C00" stroke-width="2"/>
+  <text x="695" y="155" fill="#F57C00" font-family="Arial, sans-serif" font-size="14" font-weight="bold">NOW</text>
+
+  <!-- 能力矩陣對照表 (簡化美化版) -->
+  <rect x="40" y="320" width="720" height="150" rx="10" fill="#222" stroke="#444"/>
+  <text x="60" y="350" fill="#F57C00" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Feature Matrix</text>
+  
+  <!-- 表格線 -->
+  <line x1="60" y1="365" x2="740" y2="365" stroke="#333"/>
+  <line x1="60" y1="395" x2="740" y2="395" stroke="#333"/>
+  <line x1="60" y1="425" x2="740" y2="425" stroke="#333"/>
+
+  <!-- 表格文字 -->
+  <text x="60" y="385" fill="#888" font-family="Arial, sans-serif" font-size="12">DEVICE</text>
+  <text x="200" y="385" fill="#888" font-family="Arial, sans-serif" font-size="12">CORE DATA</text>
+  <text x="400" y="385" fill="#888" font-family="Arial, sans-serif" font-size="12">COMMUNICATION</text>
+  <text x="600" y="385" fill="#888" font-family="Arial, sans-serif" font-size="12">CHART TYPE</text>
+
+  <text x="60" y="415" fill="#F57C00" font-family="Arial, sans-serif" font-size="12" font-weight="bold">SV95</text>
+  <text x="200" y="415" fill="#EEE" font-family="Arial, sans-serif" font-size="12">3-Axis Vibration + Temp</text>
+  <text x="400" y="415" fill="#EEE" font-family="Arial, sans-serif" font-size="12">BLE Command (2-way)</text>
+  <text x="600" y="415" fill="#EEE" font-family="Arial, sans-serif" font-size="12">Dual Y-Axis Trend</text>
+
+  <text x="60" y="445" fill="#CCC" font-family="Arial, sans-serif" font-size="12">VS80</text>
+  <text x="200" y="445" fill="#AAA" font-family="Arial, sans-serif" font-size="12">Video Stream + Media</text>
+  <text x="400" y="445" fill="#AAA" font-family="Arial, sans-serif" font-size="12">RTSP + FTP (Wi-Fi)</text>
+  <text x="600" y="445" fill="#AAA" font-family="Arial, sans-serif" font-size="12">Static Image / Stream</text>
+
+</svg>

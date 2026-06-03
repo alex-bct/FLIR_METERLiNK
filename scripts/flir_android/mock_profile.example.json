@@ -1,0 +1,137 @@
+{
+  "mock_add_device_default_name": {
+    "list_title": "Available devices",
+    "home_tab_token": "HOME",
+    "device_name": "AN250W",
+    "available_device_name": "AN250W",
+    "mock_enable_taps": 10,
+    "mock_logo_tap": {
+      "x": 540,
+      "y": 162
+    },
+    "mock_ble_toggle_tap": {
+      "x": 952,
+      "y": 217
+    },
+    "mock_close_token": "Close",
+    "mock_close_tap": {
+      "x": 513,
+      "y": 1670
+    },
+    "close_after_mock_wait_seconds": 4.0,
+    "add_button": {
+      "x": 990,
+      "y": 179
+    },
+    "device_card_tap": {
+      "x": 540,
+      "y": 595
+    },
+    "skip_token": "Skip",
+    "required_home_tokens": [
+      "AN250W",
+      "Air Velocity"
+    ]
+  },
+  "mock_delete_device_card": {
+    "device_name": "AN250W",
+    "sn_suffix": "AN250W-5016",
+    "home_card_tap": {
+      "x": 540,
+      "y": 1130
+    },
+    "more_tap": {
+      "x": 926,
+      "y": 620
+    },
+    "more_token": "More",
+    "remove_token": "Remove Device",
+    "confirm_token": "Remove",
+    "confirm_tap": {
+      "x": 651,
+      "y": 1290
+    }
+  },
+  "mock_home_disconnected": {
+    "home_tab_token": "HOME",
+    "device_name": "Mock VS80",
+    "required_tokens": [
+      "Mock VS80",
+      "Disconnected"
+    ]
+  },
+  "mock_home_connected": {
+    "home_tab_token": "HOME",
+    "device_name": "AN250W",
+    "required_tokens": [
+      "AN250W",
+      "Air Velocity"
+    ]
+  },
+  "mock_device_detail_disconnected": {
+    "home_tab_token": "HOME",
+    "device_name": "Mock VS80",
+    "required_tokens": [
+      "Mock VS80",
+      "Disconnected"
+    ]
+  },
+  "mock_device_detail_connected": {
+    "home_tab_token": "HOME",
+    "device_name": "AN250W",
+    "sn_suffix": "AN250W-5016",
+    "home_card_tap": {
+      "x": 540,
+      "y": 1130
+    },
+    "required_tokens": [
+      "AN250W",
+      "Air Velocity"
+    ]
+  },
+  "mock_device_detail_more_menu": {
+    "device_name": "AN250W",
+    "sn_suffix": "AN250W-5016",
+    "home_card_tap": {
+      "x": 540,
+      "y": 1130
+    },
+    "more_tap": {
+      "x": 926,
+      "y": 620
+    },
+    "required_tokens": [
+      "Remove Device"
+    ]
+  },
+  "mock_gallery_empty": {
+    "home_tab_token": "HOME",
+    "files_tab_token": "FILES",
+    "gallery_tab_token": "Gallery",
+    "required_tokens": [
+      "Empty",
+      "Gallery"
+    ]
+  },
+  "mock_log_list_browse": {
+    "home_tab_token": "HOME",
+    "files_tab_token": "FILES",
+    "log_tab_token": "Logs",
+    "required_tokens": [
+      "Logs"
+    ]
+  },
+  "mock_settings_version": {
+    "settings_tab_token": "SETTINGS",
+    "scroll_up_swipe": {
+      "x1": 540,
+      "y1": 1750,
+      "x2": 540,
+      "y2": 650,
+      "duration_ms": 300
+    },
+    "required_tokens": [
+      "V:"
+    ]
+  }
+}
